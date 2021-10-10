@@ -1,2 +1,2 @@
-# Basilphone
-Basilphone is a cloud virtual assistant as a service.
+# Yoptio
+Yoptio is a cloud virtual assistant as a service.
