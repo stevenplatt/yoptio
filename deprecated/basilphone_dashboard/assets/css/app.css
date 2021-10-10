@@ -1,0 +1,299 @@
+/** Basilphone Plans **/
+#edd_checkout_cart_form{display:none;}
+#edd-email-wrap,
+#edd-first-name-wrap,
+#edd-last-name-wrap,
+.edd-description,.edd-label{display:none !important;}
+#edd_register_account_fields label {display:none !important;}
+.basilphone_form_fields {margin:30px 0px; float:left;width:100%;}
+.basilphone_fields {float:left;width:49%;margin-bottom:30px;padding:0px 15px;}
+.basilphone_fields.left{float:left;}
+.basilphone_fields.right{float:right;}
+.basilphone_fields.full{width:100%;}
+
+.basilphone_tab ul {padding-left:0px;list-style:none;float:left;width:100%}
+.basilphone_tab ul  li {float:left;margin:0px 10px;display:inline-block;}
+.basilphone_tab ul  li a {text-decoration:none;font-size:18px;color:#333;}
+.basilphone_tab li.acitve{border:1px solid #000;}
+.activeloader {position:realative;}
+.activeloader:before {position:absolute;height:100%;width:100%;top:0px;left:0px;background-color:rgba(255,255,255,0.85);z-index: 999;}
+.basilphone_tabbox  {position:relative;float:left;width:100%;}
+.activeloader:before{background-image:url(img/loader_gray.gif);background-position: center;position: absolute;height: 100%;top: 0px;width: 100%;background-repeat: no-repeat;content:"";z-index:9999;background-color:rgba(255,255,255,0.85)}
+.activeloader .loading .message {padding: 6px 0 0 8px;float: left;}   
+/** BUTTON ROW **/
+.button_row {float:right;width:100%;}
+.button_row .btn-next {float:right;}
+#edd_checkout_form_wrap .basilphone_form_fields  input.edd-input, 
+#edd_checkout_form_wrap .basilphone_form_fields  input.edd-input-selected,
+#edd_checkout_form_wrap .basilphone_form_fields  textarea.edd-input,
+#edd_checkout_form_wrap .basilphone_form_fields  select.edd-input{width:100%;padding:10px;}
+.num-list li {list-style: none;display: inline-block;padding-right: 15px;}
+p.notify-text.success {color: green;}
+p.notify-text.error {color: red;}
+/** FIND NUMBER  **/
+.available-list{float:left;width:100%;min-height:200px;margin:60px 0px}
+#edd_final_total_wrap { background-color:#f7f7f7;text-align:right;}
+#edd_checkout_form_wrap fieldset#edd_cc_fields {border: 0px solid #f0f0f0;position: relative;float: left;width: 100%;
+margin-bottom: 0px;background: #f7f7f7;padding-bottom:40px !important}
+
+#edd_purchase_submit{background-color:#f7f7f7;padding:0px 60px 30px !important;}
+#edd_checkout_form_wrap fieldset{margin:0px 0px;float: left;width: 100%;}
+.tab_information { float: left;width: 100%;text-align: center;margin:40px 0px;}
+.tab_information  p{font-size:22px;margin-bottom:10px;}
+#edd_cc_fields legend ,#edd_cc_fields{display:none;}
+.form-control {border-left:3px solid  #48bf9f !important;}
+.edd-submit {margin:40px 60px !important;}
+#edd_checkout_form_wrap input.edd-input, #edd_checkout_form_wrap textarea.edd-input{width:100%;}
+#edd_register_account_fields .form-control{margin-bottom:20px;}
+#edd-company_address{height:120px; padding: 10px 10px 10px 20px;border-radius:0px;resize:none;font-size: 17px;}
+#edd-country {border-radius:0px;font-size: 17px;}
+#main-column .post, #main-column .page{border:0px;padding:0px;}
+.tabinfo.active{display:block;}
+#edd_checkout_form_wrap fieldset {padding:0px;}
+.basilphone-tab {float:left;width:100%;position:relative;box-shadow:none;}
+.required{color:#000;box-shadow:none;}
+.basilphone-box {float:left;width:100%;background-color:#f5f5f5;}
+.basilphone-plans .edd_download {float:left;width:33.33%;}
+.basilphonetab-inner{float:left;width:100%;list-style:none;margin:30px 90px;text-align:center;padding-left:0px;position:relative;}
+.basilphonetab-inner:after{ content: "";position: absolute;top: 50%;left: 0px;border: 1px solid #000;z-index: -1px;left: 0px;right: 0px;float: none;width: 94%;margin: 0px auto;
+z-index:9;display:none;}
+.basilphonetab-inner li {float: left;display:inline-block;padding: 15px 0px;cursor: pointer;margin-right:70px;vertical-align:middle;
+border-bottom:4px solid #FFF !important;position:relative;z-index:999;}
+.basilphonetab-inner li  a {}
+.basilphonetab-inner li  a span {max-width:100%;margin:0px auto;float:none;display:inline-block;}
+.progressbar{display:none;float:left;width:100%;margin:20px 0px;background: #fcfcfc;-webkit-transition: all 0.5 ease-in-out;-moz-transition: all 0.2s ease-in-out;-o-transition: all 0.2s ease-in-out;-ms-transition: all 0.2s ease-in-out;transition: all 0.5s ease-in-out;}
+.progressbar .progressbar_inner {width:25%;background-color:#48bf9f;float:left;padding:13px;}
+.progressbar.ispaid .progressbar_inner {width:100% !important;}
+.basilphonetab-inner li:last-child{margin-right:0px;}    
+.basilphonetab-inner li a {font-size:20px;text-decoration:none;color:#333;text-transform:uppercase;/*font-weight:700;*/}
+.tab-info {float:left;width:100%;padding:35px;}
+.basilphonetab-inner li.active,.basilphonetab-inner li:hover {
+border-bottom:2px solid #48bf9f !important;color:#FFF;}
+
+.basilphonetab-inner.app-order-complete li:hover {border:0px solid black;border-bottom:4px solid black !important;color:#FFF;background-color:none; }
+.basilphonetab-inner.app-order-complete li a {cursor:default;}
+
+
+.basilphonetab-inner li.active,.basilphonetab-inner li:hover {
+border-bottom:4px solid #1d1d1d !important;color:#FFF;
+}
+/*.basilphonetab-inner li.active a,.basilphonetab-inner li:hover a{color:#FFF;} */
+.tabinfo {min-height:400px;}
+.tabinfo{display:none;}
+.register .form-control {margin-bottom:20px;}
+.register .form-control.error{border:1px solid #F00;}
+.register  textarea{height:88px;}
+.btn-info ,.edd-submit,.sa-button-container button{padding: 14px 10px !important;width: 200px !important;border: 0px !important;float: right!important;margin: 10px 0px !important;border-radius: 0px !important;background-color: #48bf9f !important;color: #FFF !important;text-transform: uppercase !important;border: 1px solid #48bf9f !important;font-weight: 700 !important;letter-spacing: 2px;}
+.btn-info:hover,.edd-submit:hover,.btn-info:focus,.edd-submit:focus{background-color: #FFF;border-color: #48bf9f;color:#48bf9f;}
+#edd_checkout_wrap .edd-checkout-navigation{ display:none; }
+fieldset#edd_cc_address, fieldset#edd_purchase_submit {display: none;}
+p.notify-text{padding: 0 15px;}
+.edd-success div#main-content {max-width: 1020px;margin: 10px auto;}
+.edd-success .container-fluid p {font-size: 27px;}
+table#edd_subscription_receipt {float: left;width: 100%;margin: 20px 0;}
+.edd-success #edd_purchase_receipt + h3 {text-align: left;}
+.edd-alert.edd-alert-warn {display: none;}
+
+.reserve_number {margin-bottom:30px;}
+.checkout_process .btn-info{margin-top:30px;} 
+ p.notify-text.error,#edd-stripe-payment-errors .edd_errors {padding: 10px 15px;background: #b51a2a;border-radius: 5px;color: #FFF;margin:0px 15px;width: auto;float:left;}
+#edd-stripe-payment-errors .edd_errors {margin:30px 0px;}
+
+.register .form-control.error{    border: 1px solid #b51a2a;}
+.edd-checkout-step{display:block;}
+.edd-checkout-navigation-controls{display:none;}
+#edd_cc_fields p{margin-bottom:20px;}
+.edd-checkout-step-title{display:none;}
+.checkout_process {padding:20px 0px 120px;float:left;width:100%;}
+.checkout_process .widget {background-color: #f7f7f7;border-bottom: 1px solid #ededed;padding:15px;width:30%;margin-bottom:20px;}
+.checkout_cart .edd-cart{padding-left:0px;list-style:none;}
+.checkout_process_info {width:70%;}
+.checkout_cart .edd_checkout{display:none;}
+.checkout_cart .edd-remove-from-cart{float:right;padding:10px 0px;width:100%;text-align:right;} 
+.cart_item{text-align:right;text-align: right;float: left;width: 100%;font-weight: 600;}
+.cart_item.empty{text-align:left;}
+.edd-cart-number-of-items {display:none;}
+.checkout_cart .edd-cart{float:left;width:100%;}
+.checkout_process_info.full{width:100%;}
+#edd_final_total_wrap {padding:30px 0px;}
+.num-list { margin: 60px auto;float: none; width: 60%;}
+#edd-purchase-button {right:0px;}
+.available-list .loader {min-height:300px;}
+.num-list ul {padding-left:0px;float: left;width: 100%;}
+.num-list ul li {margin-bottom:15px;float:left;width:50%;}
+.num-list ul li input {width:20px;height:20px;}
+.num-list ul li span.number{padding-left: 30px;font-size:22px;} 
+.tab-info {padding:0px 60px 35px;}
+p.notify-text {padding:0px;flaot:left;}
+.checkout_cart .edd-cart-item {float:left;width:100%;padding-bottom:10px;margin-bottom:10px;border-bottom:1px dashed #ccc;}
+.num-list ul li label {font-weight:400;}
+.basilphonetab-inner li a{font-size:18px;}
+.title_mycart {font-size: 18px;text-decoration: none;color: #333;text-transform: uppercase;font-weight: 500;margin-top: 8px;padding-bottom: 12px;border-bottom: 4px solid #1ac6ff;float: left;width: auto;}
+.title_mycart .icon-shopping-13:before {color:#1ac6ff;}
+.header_title{float:left;width:100%;background-color:#261F27;padding:45px 0px;margin-bottom:60px;}
+
+/** ERROR HANDLING **/
+.edd-input.error{border:1px solid #b51a2a;border-left: 3px solid #b51a2a !important;}
+.findnumber .edd-input.error{border-left: 1px solid #b51a2a !important;}
+.findnumber .edd-input:hover {border-left: 1px solid  #e7e7e7 !important;}
+.num-list li input[type=radio],.num-list li input[type=checkbox]{margin-top:0px;}
+.header_title h2 {float:left;width:100%;text-align:center;color:#FFF;text-transform:uppercase;}
+.booked_number {float:left;width:100%;margin:10px 0px;}
+.booked_number span {flaot:left;width:100%;font-size:18px;margin-bottom:10px;}
+.booked_number  .fa-pencil{font-size:14px;margin-left:10px;cursor:pointer;display:none;}
+.booked_number:hover  .fa-pencil{display:inline-block;}
+.findnumber .btn-info {float:right !important;padding:13px 0px !important;margin-top:0px !important;} 
+p.notify-text{padding: 0 15px;}
+#edd_cc_fields_extra {padding: 0px 60px !important;background: #f7f7f7;}
+#edd_cc_fields {padding: 0px 60px !important;}   
+#edd-card-name-wrap{margin-top:0px;}
+.edd_errors{margin:0;}
+
+
+/** STEP 2 **/
+.btn-back{float:left !important;}
+.findnumber .edd-input {border-radius:0px;/*border-left:1px solid #e7e7e7!important;*/float:left;width:70% !important; box-shadow: none;padding-left:50px;}
+.search_field {position:relative;}
+.search_field .fa-search{position:absolute;top:18px;left:20px;}
+/** STEP 4 **/
+#checkout {min-height:auto;}
+#checkout .tab_information{margin:40px 0px 0px;}
+
+#edd-card-name-wrap {margin-bottom:20px;margin:30px 0px;padding:0px;}
+#card_exp_year{float:right;}
+.card-expiration {padding-right:0px;padding-left:0px;}
+#edd-card-number-wrap {padding-left:0px;}
+#edd_final_total_wrap .edd_cart_amount {color:#333;}
+.exp-divider {margin:0px 10px;}
+
+#edd_cc_fields_extra{
+	margin: 0px;
+	padding: 0px;
+	display: none;
+}
+#edd_cc_fields_extra .first-name-wrap, #edd_cc_fields_extra .last-name-wrap{
+	margin: 30px 0;
+}
+#edd_cc_fields_extra .first-name-wrap{
+	padding-left:0px;
+}
+#edd_cc_fields_extra .last-name-wrap{
+	padding-right:0px;
+	float: right;
+}
+#edd_cc_fields_extra .bill-address-wrap{
+	padding:0px;
+	 margin: 0 0 30px;
+}
+.number-details {
+    margin: 90px 0;
+}
+.lanunch-link .btn-info.launch-btn {
+    text-transform: none !important;
+    width: 300px !important;
+}
+.edd-cart-icon .edd-cart-quantity {
+    display: none;
+}
+.content-header .app-title{
+    float: left;
+}
+
+.app-page legend {
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+.app-page fieldset {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    padding: 5px;
+    vertical-align: top;
+    font-size: 11px;
+}
+.app-page .selected-user-list {
+    overflow-y: auto;
+    height: 95px;
+    max-height: 100px;
+}
+
+
+
+/** DAHSBOARD SHELL **/
+#bottomenu  {position:absolute;bottom:30px;margin:0px;list-style:none;padding-left:12px;}
+#bottomenu li {margin-top:20px;}
+.left-side li a {color:#FFF;}
+.skin-basilphone .right-side > .content-header h1{margin:0px 10px;text-transform:uppercase;}
+.the-box {padding: 15px;margin-bottom: 30px;border: 1px solid #D5DAE0;position: relative;background: white;}
+#menu {padding-top: 30px;}
+.header img {padding:20px;float:left;}
+.skin-basilphone .panel-success > .panel-heading {background-color:#48bf9f;}
+.panel-title {font-size:22px;}
+.country-title {text-align: right;font-size: 20px;margin: 0px;}
+.greeting-types {margin:30px 0px;}
+.greeting-types .radio {margin-bottom:40px;float: left;width: 100%;}
+.greeting-types .radio .iradio_minimal-blue{margin-right:15px;}
+.greeting-types .radio label {font-size:16px;}
+.call-greeting {float:left;width:100%;margin:30px 0px;}
+.app-page .call-greeting  fieldset {border-radius: 0px;border: 2px solid lightgrey;background-color:#FFF;margin-bottom:30px;}
+.app-page .call-greeting legend{border-bottom:0px;width:auto;padding:0px 10px;}
+.skin-basilphone .form-control ,.skin-basilphone .btn{border-radius:0px;}
+.skin-basilphone .select2-container--bootstrap .select2-selection,.select2-dropdown,.select2-search input{border-radius:0px;}
+.call-greeting .action .btn  {float:right;}
+.call-greeting  .form-group {float:left;width:90%;}
+.call-greeting select {width:100% !important;}
+.sidebar-nav ul a {font-size:16px;}
+.skin-basilphone .sidebar .page-sidebar-menu > li {border-bottom: 1px solid #3a4252;}
+
+/** MINUTE USAGE INFO ***/
+.minute-info {float:left;width:100%;margin:40px 0px 60px;}
+.minuteitem {text-align:center;}
+.minuteitem span {font-size:20px;float:left;width:100%;}
+.minuteitem span.count{margin-bottom:20px;font-size: 30px;}
+.flotChart{float:left;width:100%;height:500px;}
+.callvolume {border:0px;}
+.panel-inner-title {margin:0px 0px 40px;}
+
+.minute-progress {float:left;width:100%;margin:40px 0px;border:1px solid #48bf9f;}
+.minute-progressinner{float:left;width:40%;height:40px;background-color:#48bf9f;}
+.call-log .table-scrollable {height:540px;overflow-y: scroll;}
+.mobilenumber_block .country_code {float:left;width:15%;}
+.mobile_input {float:right;width:85%;}
+.list-extensions {margin-top:30px;}
+
+.notification.noerror .error_info{background: #48bf9f;} 
+.error_info {padding:10px 30px;border-radius: 3px;font-size: 16px;color: #FFF;background: #b51a2a;width: auto;float: left;margin-top:10px;}
+.form-control.error{border-left:3px solid  #b51a2a !important}
+.btn-default, .default {background: #48bf9f;color: #FFF;border: 1px solid #48bf9f;}
+.btn-default:hover{background: #48bf9f;color: #FFF;}
+.my-numbers {list-style:none;float:right;padding-right:10px;}
+.my-numbers  li {float:right;margin-left:20px;}
+.addextensions {width: 150px !important;
+    padding: 10px 10px !important;}
+.isloader {position:relative;}
+.isloader .loader{position: absolute;top: 0px;left: 0px;height: 100%;width: 100%;background-color: rgba(255,255,255,0.7);display:block;z-index:99999;}
+.isloader .loader:after{content:"";position: absolute;top: 0px;left: 0px;height: 100%;width: 100%;background-image:url('../img/loader_gray.gif');background-repeat:no-repeat;background-position:center;background-size:100%;background-size: 40px;}
+.my_numbers ul {list-style:none;}
+.my_numbers ul  li {width:50%;float:left;text-align:center;}
+.my_numbers ul  li .number_txt {font-size:20px;}
+.my_numbers ul  li .number{font-size:38px; margin-top: 10px;} 
+.sweet-alert button {padding: 12px 4px !important;width:160px !important;float:none !important;font-size: 12px !important;}
+.sweet-alert h2 {font-size:20px;font-weight: 400;margin:15px 0;}
+.sweet-alert button.confirm {margin-left: 10px !important;}
+.country-title{margin-top:9px;font-size:16px;}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{background-color: #48bf9f;
+border-color: #48bf9f}
+.pagination>li>a, .pagination>li>span{color: #000;}
+.remove-item{color: #b51a2a;}
+.extensionslists table select,.extensionslists table .select2-container {float:left;width:100% !important;}
+.select2-container--bootstrap .select2-search--dropdown .select2-search__field{border-radius:0px !important;box-shadow:none !important;}
+.extensionslists #table1_wrapper .row:nth-child(1),.extensionslists #table1_wrapper thead th.sorting_asc:after,
+.extensionslists #table1_wrapper thead th.sorting_desc:after,.extensionslists #table1_wrapper thead th.sorting:after{display:none !important;} 
+.extensionslists #table1_wrapper thead > tr > th.sorting_asc ,.extensionslists #table1_wrapper thead th.sorting_desc,.extensionslists #table1_wrapper thead th.sorting{padding-right:10px;}
+.top_heading .action .table_select,.top_heading .action .select2-container {display:none !important;}
+
+
+.edd-checkout-step{max-width:100%;}
+/***edd_receipt_page**/
+.edd_receipt_page #edd_receipt_wrapper {max-width:900px;margin:0px auto;}
