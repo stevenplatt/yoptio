@@ -1,3 +1,3 @@
-![telecomsteve preview](/logo/yoptio.jpg)
+![yoptio preview](/balsamiq/prototype_dash.png)
 
 
