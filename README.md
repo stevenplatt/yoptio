@@ -1,2 +1,2 @@
-# Basilphone Virtual Assistant
-Cloud virtual assistant as a service.
+# Basilphone
+Basilphone is a cloud virtual assistant as a service.
