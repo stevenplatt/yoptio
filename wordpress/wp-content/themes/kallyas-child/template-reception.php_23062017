@@ -1,0 +1,257 @@
+<?php if(! defined('ABSPATH')){ return; }
+/**
+* Template Name: Messages
+*
+* @package  Kallyas
+* @author   Team Hogash
+*/
+get_header('custom');
+WpkPageHelper::zn_get_subheader();
+// Check to see if the page has a sidebar or not
+/**$main_class = zn_get_sidebar_class('page_sidebar');
+if( strpos( $main_class , 'right_sidebar' ) !== false || strpos( $main_class , 'left_sidebar' ) !== false ) { $zn_config['sidebar'] = true; } else { $zn_config['sidebar'] = false; }
+$zn_config['size'] = $zn_config['sidebar'] ? 'col-sm-8 col-md-9' : 'col-sm-12';
+**/
+ global $yoptio;
+ $unreadmessages = $yoptio->message(array('action' => 'get','status'=>2));
+ $minuteused=$yoptio->calllogs(array('action' => 'minuteused','status'=>1));
+
+?>
+<!--// Main Content: page content from WP_EDITOR along with the appropriate sidebar if one specified. -->
+<section id="content" class="site-content yo-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><h1 class="page-title"><?php echo  get_the_title();?></h1></div>
+            <div class="col-md-4 yo-section section-left">
+                <div class="profile-wrapper">
+                    <div class="profile-cover">
+                        <div class="profile-img">
+                            <?php
+                                $current_user = wp_get_current_user();
+                                $author_avatar=get_user_meta($current_user->ID,'author_avatar');
+                                if($author_avatar[0]!='')
+                                    $profile_pic=$author_avatar[0];
+                                else
+                                    $profile_pic=get_avatar_url(get_avatar( $current_user->ID, 98 ));
+                            ?>
+                            <img src="<?php echo $profile_pic; ?>" align="left" class="authorimage" />
+                            <a href="javascript:void(0);" class="edit-profile-img"><i class="fa fa-edit"></i></a>
+                            <span id="status"><i class="fa fa-spinner"></i></span>
+                        </div>
+                        <form name="upload_form" id="upload_form" method="POST" enctype="multipart/form-data">
+                            <input type="file" name="images[]" id="images" accept="image/*" multiple>
+                            <?php wp_nonce_field('image_upload', 'image_upload_nonce');?>
+                            <input type="submit" value="upload" class="submit-btn">
+                        </form>
+                       
+
+                        <ul id="images_wrap">
+                        <!-- Images will be added here -->
+                        </ul>
+                        <div class="profile-detail">
+                            <h4 class="username"><?php echo  $current_user->display_name ;?></h4>
+                            <a class="emailid" href="mailto:<?php echo  $current_user->user_email;?>"><?php echo  $current_user->user_email;?></a>
+                        </div>
+                    </div>
+                    <div class="user-activitiy">
+                        <div class="dt_t">
+                            <div class="dt_tc">
+                                <i class="fa fa-clock-o color-blue"></i>
+                                <h4 class="color-blue">Minutes Used</h4>
+                                <?php  
+                                  
+                                ?>
+                                <span class="rate tweetrate"><?php echo  ($minuteused[0]->total_minuteused>0) ? $minuteused[0]->total_minuteused : 0 ;?></span>
+                            </div>
+                            <div class="dt_tc">
+                                <i class="fa fa-comment-o color-pink"></i>
+                                <h4 class="color-pink">Unread Message</h4>
+                                <span class="rate usagerate unreadcount"><?php echo (count( $unreadmessages)>0) ? count( $unreadmessages) : 0 ;;?></span>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <h5>Reception Number</h5>
+                            <?php
+                                global $current_user;
+                                $number_countrycode= get_user_meta($current_user->ID, 'number_countrycode', true);
+                                $Yoptio_Number= get_user_meta($current_user->ID, 'number_assignment', true);
+                                if(!empty( $Yoptio_Number)) :
+                                    $number='';
+                                    if(!empty($number_countrycode)) $number.='('.$number_countrycode.') ';
+                                    $number.=$Yoptio_Number;
+                                else:
+                                    $number='---';   
+                                endif;
+                            ?>
+                            <span class="contacts"><i class="fa fa-mobile"></i> <span><?php echo $number;?></span></span>
+                            <div class="line-hz"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/line.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="white-box followup-wrapper">
+                    <h4 class="box-title">Follow Up</h4>
+                    <form class="form-followup">
+                        <ul class="followup-checklist list-group">
+                            <?php
+                                $followups = $yoptio->followup(array('action' => 'get'));
+                                if(!empty($followups)):
+                                    foreach ($followups as $followup):
+                            ?> 
+                            <li class="list-group-item list-group-item-<?php echo $followup->id;?>">
+                                <div class="checkbox checkbox-success followup-<?php echo $followup->id;?>">
+                                    <input id="checkbox<?php echo $followup->id;?>" type="checkbox" class="follow-up-checks" data-id="<?php echo $followup->id;?>">
+                                    <label class="clicktostrick"><span><?php echo $followup->followup_text;?></span></label>
+                                    <a href="javascript:void(0);" class="followup-close" data-id="<?php echo $followup->id;?>"><i class="fa fa-close"></i></a>
+                                </div>
+                            </li>
+                            <?php 
+                                    endforeach;
+                                endif;
+                            ?>
+                        </ul>
+                        <div class="input-group add-new-followup">
+                            <input type="text" class="form-control followup-input" placeholder="Add new Follow Up">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-info add-followup">Add</button>
+                                <!--  onclick="addFollowUp(); return false;" -->
+                            </span>
+                        </div>
+                    </form>
+                </div><!-- .white-box -->
+            </div>
+            <div class="col-md-8 yo-section section-right">
+                <ul class="nav customtab nav-tabs" role="tablist">
+                    <li role="presentation" class=""><a href="#calllogs" aria-controls="calllogs" role="tab" data-toggle="tab" aria-expanded="true"><span>Call Log</span></a></li>
+                    <li role="presentation" class=""><a href="#read" aria-controls="read" role="tab" data-toggle="tab" aria-expanded="false"><span>Read</span></a></li>
+                    <li role="presentation" class="active"><a href="#unread" aria-controls="unread" role="tab" data-toggle="tab" aria-expanded="true"><span>Unread</span></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade unread-pane active in" id="unread">
+                        <div class="row">
+                            <?php
+                                if(!empty($unreadmessages)):
+                                    foreach ($unreadmessages as $unreadmessage):
+                                        $readdate  = date('l M d - h:ia',strtotime($unreadmessage->received_date));
+                            ?>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 message-panel message-panel<?php echo $unreadmessage->id;?>">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span class="phoneno color-blue"><?php echo $unreadmessage->from_number;?></span>
+                                        <div class="panel-action">
+                                            <a href="javascript:void(0);" data-id="<?php echo $unreadmessage->id;?>" class="close-panel remove-message" data-perform="panel-dismiss" ><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-wrapper collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <?php echo $unreadmessage->message;?>
+                                            <div class="text-right"><a class="btn btn-info m-t-10  m-t-<?php echo $unreadmessage->id;?> msg-marker read-btn" data-id="<?php echo $unreadmessage->id;?>">Mark Read</a></div>
+                                        </div>
+                                        <div class="panel-footer"><span class="dayofcall color-pink"><?php echo $readdate;?></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                                    endforeach;
+                                else:
+                            ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 message-panel">
+
+                                </div>
+                            <?php
+                                endif;
+                            ?>
+                        </div><!-- .row -->
+                        <div class="clearfix"></div>
+                    </div><!-- .tab-panel -->
+                    <div role="tabpanel" class="tab-pane fade read-pane" id="read">
+                        <div class="row">
+                            <?php 
+                                $readmessages = $yoptio->message(array('action' => 'get','status'=>1));
+                                if(!empty($readmessages)):
+                                    foreach ($readmessages as $readmessage):
+                                        $readdate  = date('l M d - h:ia',strtotime($readmessage->received_date));
+                            ?>
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 message-panel message-panel<?php echo $readmessage->id;?>">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <span class="phoneno color-blue"><?php echo $readmessage->from_number;?></span>
+                                        <div class="panel-action">
+                                            <a href="javascript:void(0);" data-id="<?php echo $readmessage->id;?>" class="close-panel remove-message" data-perform="panel-dismiss" ><i class="fa fa-close"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-wrapper collapse in" aria-expanded="true">
+                                        <div class="panel-body">
+                                            <?php echo $readmessage->message;?>
+                                            <div class="text-right"><a class="btn btn-info m-t-10  m-t-<?php echo $readmessage->id;?> msg-marker unread-btn" data-id="<?php echo $readmessage->id;?>">Mark Unread</a></div>
+                                        </div>
+                                        <div class="panel-footer"><span class="dayofcall color-pink"><?php echo $readdate;?></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <?php 
+                                    endforeach;
+                                else:
+                            ?>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 message-panel">
+
+                                </div>
+                            <?php
+                                endif;
+                            ?>
+                        </div><!-- .row -->
+                        <div class="clearfix"></div>
+                    </div><!-- .tab-panel -->
+                    <div role="tabpanel" class="tab-pane fade collog-pane" id="calllogs">
+                        <div class="row">
+                            <div class="col-md-12 calllogs-panel">
+                                <div class="white-box">
+                                    <h4 class="box-title m-b-0">Call Log</h4>
+                                    <p class="text-muted m-b-20">
+                                        <?php 
+                                            global $post;
+                                            echo  $post->post_content;
+                                        ?>
+                                    </p>
+                                    <div class="table-responsive">
+                                        <table id="call_logs" class="table" cellspacing="0" width="100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Number</th>
+                                                    <th>Duration</th>
+                                                    <th>Message</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php 
+                                                $calllogs = $yoptio->calllogs(array('action' => 'get','status'=>1));
+                                                if(!empty($calllogs)) {
+                                                foreach ($calllogs as $calllog){
+                                                    $readdate  = date('l M d - h:ia',strtotime($readmessage->received_date));
+                                            ?>
+                                                <tr>
+                                                    <td><span class="text-muted"><?php echo date('m/d/Y',strtotime($calllog->received_date));?></td>
+                                                    <td><span class="text-muted"><?php echo $calllog->received_time;?></td>
+                                                    <td><?php echo $calllog->country_code." ".$calllog->from_number;?></td>
+                                                    <td><span class="text-muted"><?php echo $calllog->duration;?></td>
+                                                    <td>    
+                                                    <?php if($calllog->message_status) : ?>
+                                                      <div class="label label-table label-success">Message</div></td>
+                                                    <?php endif;?>
+                                                </tr>
+                                            <?php } } ?>
+                                         </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- .tab-content -->
+            </div><!-- .section-right -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</section><!--// #content -->
+<?php get_footer('custom'); ?>

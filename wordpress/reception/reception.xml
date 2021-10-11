@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+
+  <Gather timeout="1" numDigits="1" action="conference.xml" method="POST">
+    <Say>Hi! You've reached reception. Give me a moment, and I'll connect you!</Say>
+    <Pause length="1"/>
+    <Say>If calling for a team conference, just press 1 and I'll take you to your group instead!</Say>
+    <Say>Otherwise, it'll just be a moment!</Say>
+  </Gather>
+
+  <Redirect method="POST">
+    dial.xml?Digits=TIMEOUT
+  </Redirect>
+</Response>
